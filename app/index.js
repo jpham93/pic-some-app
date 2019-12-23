@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Photos from './pages/Photos';
 import Cart from './pages/Cart';
+import { AppContextProvider, AppContext } from './context/appContext';
 
 const App = (props) => {
   return (
@@ -25,4 +26,9 @@ const App = (props) => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <AppContextProvider>
+    <App />
+  </AppContextProvider>,
+  document.getElementById('app')
+);
