@@ -1,14 +1,20 @@
 # Challenge
 
-Set up the Context for our app.
+Get the JSON data with the photos information from the API and save it to context state
 
-1. In a new file, create a new context with React
-2. In that same file, create a custom component that renders the Provider of the context you created
-3. For now, just pass in an empty string "" as the context provider's value prop
-4. Export the custom Provider component and the full context object (so we can pass it to the useContext hook eventually)
-5. Set up your index.js to use the custom context Provider you created. (You can wrap it as a parent of the Router component)
+1. As soon as the ContextProvider component renders, get the JSON data from this url: 
+https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json
 
-Add state to our context and pass it through the Provider
+2. Save the array of data that comes back to state.
 
-1. Add state to hold the array of all photos our app gets from the API
-2. Pass the array of all photos through the value of the provider so it's available anywhere the app accesses the context
+Review data fetching in React using `fetch`: 
+https://scrimba.com/p/p7P5Hd/c79Jask
+
+Using the data in context state, map over it in the Photos page and display the images.
+
+On the Image component, track the hover state
+
+1. Create state boolean for "hovered"
+2. When the mouse enters the Image's div, set "hovered" to true
+3. When the mouse leaves the Image's div, set "hovered" to false
+4. Log "hovered" to the console so you know it's changing successfully.
