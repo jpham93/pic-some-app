@@ -1,0 +1,43 @@
+{
+  "name": "pic-some-app",
+  "version": "1.0.0",
+  "description": "A React application as a mock e-commerce website",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpham93/capstone.git"
+  },
+  "author": "James Pham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpham93/capstone/issues"
+  },
+  "homepage": "https://github.com/jpham93/capstone#readme",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.1.1",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
