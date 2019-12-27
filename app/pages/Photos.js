@@ -4,7 +4,7 @@ import { getClass } from '../utils';
 import Image from '../components/Image';
 
 export default (props) => {
-  const { photos, setPhotos } = useContext(AppContext);
+  const { photos, clickFavorite } = useContext(AppContext);
   const mapPhotos = photos.map(({ id, url, isFavorite }, index) => {
     return (
       <Image
@@ -13,8 +13,7 @@ export default (props) => {
         url={ url }
         className={ getClass(index) }
         isFavorite={ isFavorite }
-        photos={ photos }
-        setPhotos={ setPhotos }
+        clickFavorite={ clickFavorite }
       />);
   });
 

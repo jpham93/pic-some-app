@@ -18,8 +18,18 @@ const AppContextProvider = (props) => {
       .catch(err => console.log(err));
   }, []);
 
+  const clickFavorite = (id) => {
+    const newPhotos = photos.map(photo => {
+      if (photo.id === id) {
+        photo.isFavorite = !photo.isFavorite;
+      }
+      return photo;
+    });
+    setPhotos(newPhotos);
+  };
+
   return (
-    <AppContext.Provider value={ { photos, setPhotos } }>
+    <AppContext.Provider value={ { photos, setPhotos, clickFavorite } }>
       { props.children }
     </AppContext.Provider>
   );
