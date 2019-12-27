@@ -4,10 +4,19 @@ import { getClass } from '../utils';
 import Image from '../components/Image';
 
 export default (props) => {
-  const { photos } = useContext(AppContext);
-  const mapPhotos = photos.map(({ id, url, isFavorite, setFavorite }, index) => (
-    <Image key={ id } src={ url } className={ getClass(index) } isFavorite setFavorite />
-  ));
+  const { photos, setPhotos } = useContext(AppContext);
+  const mapPhotos = photos.map(({ id, url, isFavorite }, index) => {
+    return (
+      <Image
+        key={ id }
+        id={ id }
+        url={ url }
+        className={ getClass(index) }
+        isFavorite={ isFavorite }
+        photos={ photos }
+        setPhotos={ setPhotos }
+      />);
+  });
 
   return (
     <main className="photos">
