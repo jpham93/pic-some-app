@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 
 export default ({ className, src }) => {
   const [hover, setHover] = useState(false);
-  const heartIcon = hover && <i className="ri-heart-line favorite"></i>;
-  const plusIcon = hover && <i className="ri-add-circle-line cart"></i>;
+  const [isFavorite, setFavorite] = useState(false);
+  const plusIcon = <i className="ri-add-circle-line cart"></i>;
+  const heartIconClass = isFavorite ? 'ri-heart-fill' : 'ri-heart-line';
 
   return (
     <div
@@ -12,8 +13,13 @@ export default ({ className, src }) => {
       onMouseLeave={ () => setHover(false) }
     >
       <img src={ src } className="image-grid" />
-      { heartIcon }
-      { plusIcon }
+      {
+        hover &&
+        <>
+          { plusIcon }
+          <i className={ `${heartIconClass} favorite` } onClick={ () => setFavorite(prevFav => !prevFav) }></i>
+        </>
+      }
     </div>
   );
 };

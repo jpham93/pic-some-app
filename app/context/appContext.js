@@ -13,7 +13,7 @@ const AppContextProvider = (props) => {
   }, []);
 
   return (
-    <AppContext.Provider value={ { photos } }>
+    <AppContext.Provider value={ { photos, setPhotos } }>
       { props.children }
     </AppContext.Provider>
   );

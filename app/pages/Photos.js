@@ -5,10 +5,10 @@ import Image from '../components/Image';
 
 export default (props) => {
   const { photos } = useContext(AppContext);
-  console.log(photos);
-  const mapPhotos = photos.map(({ id, url, isFavorite }, index) => (
-    <Image key={ id } src={ url } className={ getClass(index) } />
+  const mapPhotos = photos.map(({ id, url, isFavorite, setFavorite }, index) => (
+    <Image key={ id } src={ url } className={ getClass(index) } isFavorite setFavorite />
   ));
+
   return (
     <main className="photos">
       { mapPhotos }
